@@ -11,5 +11,5 @@ spec:
   ports:
     - port: 8081        # Service port
       targetPort: 8080  # Container port (Tomcat)
-      nodePort: 30080   # Optional: specify, else Kubernetes assigns one
+      #nodePort: 30080   # Optional: specify, else Kubernetes assigns one
       protocol: TCP
