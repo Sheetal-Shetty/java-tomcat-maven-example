@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: javamaven
   labels:
     app: javamaven
-  name: javamaven
 spec:
   type: NodePort
-  ports:
-    - port: 8080
-      protocol: TCP
   selector:
     app: javamaven
+  ports:
+    - port: 8081        # Service port
+      targetPort: 8080  # Container port (Tomcat)
+      nodePort: 30080   # Optional: specify, else Kubernetes assigns one
+      protocol: TCP
